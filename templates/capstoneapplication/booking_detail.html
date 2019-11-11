@@ -1,0 +1,53 @@
+{% extends 'capstoneapplication/base.html' %}
+
+{% block title %}
+    Booking - {{ booking }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ booking }}</h2>
+
+    <section>
+        <table>
+            <tr>
+                <th>Customer:</th>
+                <td><a href="">{{ customer.customer_first_name }}</a></td>
+            </tr>
+            <tr>
+                <th>Caterer:</th>
+                <td>{{ caterer.caterer_name }}</td>
+            </tr>
+            <tr>
+                <th>Venue:</th>
+                <td><a href="">{{ venue.venue_name }}</a></td>
+            </tr>
+
+            <tr>
+                <th>Date:</th>
+                <td><a href="">{{ booking.booking_date }}</a></td>
+            </tr>
+            <tr>
+                <th>Start Time:</th>
+                <td><a href="">{{ booking.booking_start_time }}</a></td>
+            </tr>
+            <tr>
+                <th>End Time:</th>
+                <td><a href="">{{ booking.booking_end_time }}</a></td>
+            </tr>
+        </table>
+
+    </section>
+
+    <section>
+        <h3>Bookings</h3>
+        <ul>
+            {% for booking in booking_list %}
+                <li>
+                    <a href="">{{ booking.booking_id }}</a>
+                </li>
+            {% empty %}
+                <li><em>There is currently nothing booked.</em></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

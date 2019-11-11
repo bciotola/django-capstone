@@ -1,0 +1,47 @@
+{% extends 'capstoneapplication/base.html' %}
+
+{% block title %}
+    Venue - {{ venue }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ venue }}</h2>
+
+    <section>
+        <table>
+            <tr>
+                <th>Room Name:</th>
+                <td>{{ venue.venue_room_name }}</td>
+            </tr>
+            <tr>
+                <th>Venue Fee:</th>
+                <td>{{ venue.venue_rental_fee }}</td>
+            </tr>
+            <tr>
+                <th>Venue Size:</th>
+                <td>{{ venue.venue_room_size }}</td>
+            </tr>
+            <tr>
+                <th>Venue Capacity:</th>
+                <td>{{ venue.venue_room_capacity }}</td>
+            </tr>
+            <tr>
+                <th>Venue Booking Status:</th>
+                <td>{{ venue.is_booked }}</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h3>Bookings</h3>
+        <ul>
+            {% for booking in booking_list %}
+                <li>
+                    <a href="">{{ booking }}</a>
+                </li>
+            {% empty %}
+                <li><em>There are currently no bookings for this venue.</em></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

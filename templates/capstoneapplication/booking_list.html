@@ -1,0 +1,19 @@
+{% extends 'capstoneapplication/base.html' %}
+
+{% block title %}
+    Booking List
+{% endblock %}
+
+{% block content %}
+<h2>Course Information System</h2>
+
+        <ul>
+            {% for booking in booking_list %}
+                 <li>
+                    <a href="">{{ booking }}</a>
+                <li>
+            {%empty %}
+                <li><em>There are currently no bookings available.</em></li>
+             {% endfor %}
+        </ul>
+{% endblock %}

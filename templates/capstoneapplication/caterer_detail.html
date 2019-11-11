@@ -1,0 +1,43 @@
+{% extends 'capstoneapplication/base.html' %}
+
+{% block title %}
+    Caterer - {{ caterer }}
+{% endblock %}
+
+{% block content %}
+    <h2>{{ caterer }}</h2>
+
+    <section>
+        <table>
+            <tr>
+                <th>Phone:</th>
+                <td>{{ caterer.caterer_phone }}</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>{{ caterer.caterer_email }}</td>
+            </tr>
+            <tr>
+                <th>Menu Type:</th>
+                <td>{{ caterer.caterer_menu_type }}</td>
+            </tr>
+            <tr>
+                <th>Cost Per Person:</th>
+                <td>{{ caterer.caterer_menu_cost_per_person }}</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h3>Bookings</h3>
+        <ul>
+            {% for booking in booking_list %}
+                <li>
+                    <a href="">{{ booking }}</a>
+                </li>
+            {% empty %}
+                <li><em>There are currently no bookings for this caterer.</em></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

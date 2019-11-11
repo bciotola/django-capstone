@@ -1,0 +1,19 @@
+{% extends 'capstoneapplication/base.html' %}
+
+{% block title %}
+    Customer List
+{% endblock %}
+
+{% block content %}
+<h2>Course Information System</h2>
+
+        <ul>
+            {% for customer in customer_list %}
+                 <li>
+                    <a href="">{{ customer }}</a>
+                <li>
+            {%empty %}
+                <li><em>There are currently no customers available.</em></li>
+             {% endfor %}
+        </ul>
+{% endblock %}
