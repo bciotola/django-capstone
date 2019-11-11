@@ -25,7 +25,7 @@ SECRET_KEY = 's#tq8)x7#(o$#r+20nh124c5st&j#!c2&84fhp6w@qtyz2uj%x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['project-capstone-production.azurewebsites.net']
 
 
 # Application definition
